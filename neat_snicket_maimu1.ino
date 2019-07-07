@@ -71,7 +71,7 @@ void clear()//izkluchva vsi4ki alarmi
   
   
 }
-digitalWrite(19,LOW);
+noTone(19);//digitalWrite(19,LOW);
 
 
 
@@ -88,7 +88,7 @@ void sensor()//metod za chetene ot sensora i pri zasichane vklu4va alarmata
     if(digitalRead(stai[i].pin)==1){stai[i].alarma=true;}
     if(stai[i].alarma == true)      
     {
-      lcd.print(stai[i].ime + " "+"Threat!!!");digitalWrite(19,HIGH);
+      lcd.print(stai[i].ime + " "+"Threat!!!");tone(19,1000);//digitalWrite(19,HIGH);
     }
     else
     {
